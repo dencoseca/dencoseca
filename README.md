@@ -1,3 +1,4 @@
+```go
 package main
 
 import (
@@ -146,3 +147,4 @@ func main() {
 
 	yourNewBestFriend.AddSkill("Kansas City Shuffle")
 }
+```
