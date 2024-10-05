@@ -59,6 +59,7 @@ func (d *DencoSeca) IsCompatibleWithJob(requiredSkills []string, description, co
 	}
 
 	return true
+
 }
 
 type Application struct {
@@ -87,19 +88,20 @@ func (d *DencoSeca) ApplyForJob(jobTitle, companyName, companyUrl string) error 
 		JobTitle: jobTitle,
 	}
 
-	err := d.Promote(application)
+	err := d.promote(application)
 	if err != nil {
 		return err
 	}
 
 	return nil
+
 }
 
 type ShamelessPromoter interface {
 	Promote(application *Application) error
 }
 
-func (d *DencoSeca) Promote(application *Application) error {
+func (d *DencoSeca) promote(application *Application) error {
 	jsonData, err := json.Marshal(application)
 	if err != nil {
 		return err
@@ -123,6 +125,7 @@ func (d *DencoSeca) Promote(application *Application) error {
 	}
 
 	return nil
+
 }
 
 func main() {
